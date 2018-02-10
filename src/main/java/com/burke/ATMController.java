@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Scope(value ="singleton")
 @Controller
-public class WelcomeController {
+public class ATMController {
 	ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 	// inject via application.properties
 	
