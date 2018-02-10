@@ -12,10 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class ATMWorkerThread implements Runnable {
 public ATMWorkerThread(int accountnumber) {
-	System.out.println("Spawned thread for account"+ accountnumber);
+
 	Account account=database.accessAccount(accountnumber);
-	System.out.println("account data grabbed for"+accountnumber);
-	System.out.println("database size"+database.database.size());
 	queue.add(account);
 	
 }
@@ -70,7 +68,7 @@ private void credit(Account account) {
 }
 
 private void savings(Account account) {
-	System.out.println("Balance in savings account is "+account.getCurrentbalance());
+	System.out.println("Balance in savings account is "+account.getSavingsbalance());
 	
 }
 

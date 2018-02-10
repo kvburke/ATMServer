@@ -13,24 +13,18 @@ public class Execute {
 	@Autowired
 	AccountDatabase database;
 	
-	public void hello() {
-		System.out.println("Hello");
-	}
 	
 	public void submit(Account account) {
 		
-		System.out.println(account.getAccountnumber());
-		System.out.println(account.getCreditscore());
+		
 		account.getCurrentbalance();
 		account.getHistory();
 		account.getSavingsbalance();
 		database.createAccount(account);
 		String accountmessage=account.getMessage();
 		String accountstring=accountmessage.substring(0,4);
-		System.out.println("account string is"+accountstring);
 		Integer accountnumber=Integer.parseInt(accountstring);
 		String message=accountmessage.substring(5);
-		System.out.println("account number is"+accountnumber);
 		executor.submit(new ATMWorkerThread(accountnumber));
 		System.out.println("Task submitted");
 	}

@@ -11,14 +11,12 @@ public class AccountDatabase {
 static Map<Integer, Account> database= new ConcurrentHashMap<Integer, Account>();
 
 public void createAccount(Account account) {
-	System.out.println("creating account"+ account.getAccountnumber()+" balance"+ account.getCurrentbalance());
 	database.put(account.getAccountnumber(), account);
 }
 
 public static void updateAccount(Account account) {
 	database.put(account.getAccountnumber(), account);
 }
-
 
 public static Account accessAccount(int accountnumber) {
 	Account account=database.get(accountnumber);
@@ -28,4 +26,5 @@ public static Account accessAccount(int accountnumber) {
 public void deleteAccount(int accountnumber) {
 	database.remove(accountnumber);
 }
+
 }

@@ -30,7 +30,7 @@ public class MessageReceiver {
 	private Execute execute;
 	
 
-	public void main(String[] args) throws JMSException {
+	public void main() throws JMSException {
 		// Getting JMS connection from the server
 		ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);
 		Connection connection = connectionFactory.createConnection();
