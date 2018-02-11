@@ -38,13 +38,14 @@ public void run() {
 	currentbalance(account);
 	lock1.unlock();
 	lock2.lock();
-	savings(account);
+	deposit(account);
 	lock2.unlock();
 	lock3.lock();
-	credit(account);
+	withdraw(account);
 	lock3.unlock();
 	lock4.lock();
 	history(account);
+	currentbalance(account);
 	lock4.unlock();
 	
 	
@@ -62,16 +63,21 @@ private void history(Account account) {
 	
 }
 
-private void credit(Account account) {
-	System.out.println("Credit score is "+account.getCreditscore());
-	
+public void deposit(Account account) {
+	System.out.println("Depositing $"+account.getDeposit());
+	double currentbalance=account.getCurrentbalance()+account.getDeposit();
+	account.setCurrentbalance(currentbalance);
+	AccountDatabase.updateAccount(account);
 }
 
-private void savings(Account account) {
-	System.out.println("Balance in savings account is "+account.getSavingsbalance());
-	
+public void withdraw(Account account) {
+	System.out.println("Withdrawing $"+account.getWithdraw());
+	double currentbalance=account.getCurrentbalance()-account.getWithdraw();
+	//System.out.println("The current balance in method is"+currentbalance);
+	account.setCurrentbalance(currentbalance);
+	AccountDatabase.updateAccount(account);
 }
-
+ 
 private void currentbalance(Account account) {
 	System.out.println("Current balance is "+account.getCurrentbalance());
 	

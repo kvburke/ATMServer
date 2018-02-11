@@ -1,6 +1,10 @@
 package com.burke;
 
+
+
+
 import java.io.Serializable;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,6 +18,8 @@ private String history;
 private int creditscore;
 private double savingsbalance;
 private double currentbalance;
+private double deposit;
+private double withdraw;
 
 public int getAccountnumber() {
 	return accountnumber;
@@ -63,9 +69,23 @@ public double getCurrentbalance() {
 public void setCurrentbalance(double currentbalance) {
 	this.currentbalance = currentbalance;
 }
+public double getDeposit() {
+	return deposit;
+}
+public void setDeposit(double deposit) {
+	this.deposit = deposit;
+}
+public double getWithdraw() {
+	return withdraw;
+}
+public void setWithdraw(double withdraw) {
+	this.withdraw = withdraw;
+}
+
 
 
 
 
 
 }
+
