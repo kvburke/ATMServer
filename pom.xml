@@ -85,8 +85,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>tomcat-maven-plugin</artifactId>
+              <!--   <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId> -->
                <!--   <configuration>
                   <url>http://localhost:8080/manager/text</url>
                     <path>/spring-boot-web-jsp</path>
@@ -94,7 +94,7 @@
                      <password>password</password>
                   </configuration> -->
                   
-                  <configuration>
+         <!--         <configuration>
         <type>runtime</type>
         <properties>
           <cargo.hostname>localhost/manager/html</cargo.hostname>
@@ -102,8 +102,21 @@
           <cargo.remote.username>admin</cargo.remote.username>
           <cargo.remote.password>password</cargo.remote.password>
         </properties>
-      </configuration>
-                  
+      </configuration> -->
+      
+         
+    <groupId>org.apache.tomcat.maven</groupId>
+    <artifactId>tomcat7-maven-plugin</artifactId>
+    <version>2.2</version>
+    <configuration>
+        <url>http://localhost:8888/manager/text</url>
+        <server>TomcatServer</server>
+       
+        <update>true</update>
+        <username>admin</username>
+        <password>password</password>
+    </configuration>
+
                   
             </plugin>
 		</plugins>
