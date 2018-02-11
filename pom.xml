@@ -85,8 +85,25 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-              <!--   <groupId>org.codehaus.mojo</groupId>
-                <artifactId>tomcat-maven-plugin</artifactId> -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>tomcat-maven-plugin</artifactId>
+                <configuration>
+    <container>
+        <containerId>tomcat8x</containerId>
+        <type>remote</type>
+    </container>
+    <configuration>
+        <type>runtime</type>
+        <properties>
+            <cargo.remote.username>admin</cargo.remote.username>
+            <cargo.remote.password>password</cargo.remote.password>
+            <cargo.tomcat.manager.url>http://localhost:8080/manager/text
+              </cargo.tomcat.manager.url>
+        </properties>
+    </configuration>
+</configuration>
+                
+                
                <!--   <configuration>
                   <url>http://localhost:8080/manager/text</url>
                     <path>/spring-boot-web-jsp</path>
@@ -104,19 +121,8 @@
         </properties>
       </configuration> -->
       
-         
-    <groupId>org.apache.tomcat.maven</groupId>
-    <artifactId>tomcat7-maven-plugin</artifactId>
-    <version>2.2</version>
-    <configuration>
-        <url>http://localhost:8888/manager/text</url>
-        <server>TomcatServer</server>
-       
-        <update>true</update>
-        <username>admin</username>
-        <password>password</password>
-    </configuration>
-
+      
+                  
                   
             </plugin>
 		</plugins>
