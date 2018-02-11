@@ -97,7 +97,7 @@
                   <configuration>
         <type>runtime</type>
         <properties>
-          <cargo.hostname>localhost</cargo.hostname>
+          <cargo.hostname>localhost/manager/html</cargo.hostname>
           <cargo.servlet.port>8080</cargo.servlet.port>
           <cargo.remote.username>admin</cargo.remote.username>
           <cargo.remote.password>password</cargo.remote.password>
