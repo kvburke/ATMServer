@@ -79,7 +79,7 @@ public double getWithdraw() {
 	return withdraw;
 }
 public void setWithdraw(double withdraw) {
-	this.withdraw = withdraw;
+	this.withdraw = withdraw;//
 }
 
 

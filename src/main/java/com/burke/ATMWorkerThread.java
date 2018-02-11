@@ -79,7 +79,7 @@ public void withdraw(Account account) {
 }
  
 private void currentbalance(Account account) {
-	System.out.println("Current balance is "+account.getCurrentbalance());
+	System.out.println("Current balance is "+account.getCurrentbalance());//
 	
 }
 
